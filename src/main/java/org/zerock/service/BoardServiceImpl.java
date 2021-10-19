@@ -21,6 +21,8 @@ public class BoardServiceImpl implements BoardService{
     @Setter(onMethod_ = @Autowired)
     private BoardMapper mapper;
 
+
+    // 게시물 등록
     @Override
     public void register(BoardVO board){
         log.debug("register(board) invoked");
@@ -28,6 +30,8 @@ public class BoardServiceImpl implements BoardService{
         mapper.insertSelectKey(board);
     } //register
 
+
+    // 특정 게시물 조회
     @Override
     public BoardVO get(Long bno) {
         log.debug("get(bno) invoked.");
@@ -37,6 +41,8 @@ public class BoardServiceImpl implements BoardService{
         return mapper.read(bno);
     } //get
 
+
+    // 게시물 수정
     @Override
     public boolean modify(BoardVO board) {
         log.debug("modify(board) invoked.");
@@ -46,6 +52,8 @@ public class BoardServiceImpl implements BoardService{
         return mapper.update(board) == 1;
     } //modify
 
+
+    // 게시물 삭제
     @Override
     public boolean remove(Long bno) {
         log.debug("remove(bno) invoked.");
@@ -55,6 +63,8 @@ public class BoardServiceImpl implements BoardService{
         return mapper.delete(bno) == 1;
     } //remove
 
+
+    // 전체 게시물 목록 조회
     @Override
     public List<BoardVO> getList() {
         log.debug("getList() invoked");
