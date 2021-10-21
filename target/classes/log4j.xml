@@ -13,7 +13,7 @@
 
     <!-- Application Loggers -->
     <logger name="Controller">
-        <level value="debug" />
+        <level value="info" />
     </logger>
 
     <!-- log4jdbc.log4j2 -->
@@ -34,11 +34,11 @@
     </logger>
 
     <logger name="jdbc.resultsettable">
-        <level value="info" />
+        <level value="warn" />
     </logger>
 
     <logger name="jdbc.connection">
-        <level value="debug" />
+        <level value="warn" />
     </logger>
 
     <!-- 3rdparty Loggers -->
@@ -55,7 +55,17 @@
     </logger>
 
     <logger name="org.springframework.web">
-        <level value="debug" />
+        <level value="info" />
+    </logger>
+
+
+    <!-- Hikari log -->
+    <logger name="com.zaxxer.hikari">
+        <level value="info" />
+    </logger>
+
+    <logger name="com.zaxxer.hikari.HikariConfig">
+        <level value="info"/>
     </logger>
 
     <!-- Root Logger -->

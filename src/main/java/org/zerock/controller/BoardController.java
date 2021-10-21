@@ -73,6 +73,7 @@ public class BoardController {
 
         if (service.modify(board)){
             rttrs.addFlashAttribute("result", "success");
+
         } //if : 성공적으로 modify가 이루어졌으면...
 
         return "redirect:/board/list";

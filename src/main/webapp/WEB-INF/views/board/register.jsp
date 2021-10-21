@@ -13,23 +13,23 @@
 
 <div class="row">
     <div class="col-lg-12">
-            <h1 class="page-header"> Board Register </h1>
+        <h1 class="page-header">Board Register</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
-<!-- ./row -->
+<!-- /.row -->
 
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
 
-            <div class="panel-heading">Board Register </div>
-            <!-- ./panel-heading -->
+            <div class="panel-heading">Board Register</div>
+            <!-- /.pannel-heading -->
             <div class="panel-body">
 
                 <form role="form" action="/board/register" method="post">
                     <div class="form-group">
-                        <<label>Title</label>
+                        <label>Title</label>
                         <input class="form-control" name="title">
                     </div>
 
@@ -46,12 +46,13 @@
                     <button type="reset" class="btn btn-default">Reset Button</button>
                 </form>
             </div>
-            <!-- end panel-body-->
+            <!-- end panel-body -->
+
         </div>
-        <!--end panel-heading -->
+        <!-- end panel-heading -->
     </div>
     <!-- end panel -->
 </div>
 <!-- /.row -->
 
-<%@include file="../includes/footer.jsp"%>
+<%@include file="../includes/footer.jsp" %>
