@@ -61,7 +61,7 @@
     <!-- Root Logger -->
     <!-- root = default -->
     <root>
-        <priority value="info" />
+        <priority value="debug" />
         <!-- priority : log level. 레벨 너무 낮으면 log에 찍히지 않음.
              fatal > error > warn > info > debug > trace (verbose)
              fatal~error는 빨갛게 찍힘 -->

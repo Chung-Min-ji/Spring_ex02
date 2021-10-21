@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.servlet.ModelAndView;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -26,6 +27,7 @@ public class BoardControllerTests {
 
     @Setter(onMethod_ = @Autowired)
     private WebApplicationContext ctx;
+
 
     // 가짜 mvc. 가짜 url과 파라미터등을 브라우저에서 사용하는 것처럼 만들어 Controller실행해볼 수 있다.
     private MockMvc mockMvc;
