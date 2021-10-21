@@ -46,20 +46,20 @@
 
 <!-- Bootstrap core JavaScript-->
 <%--<script src="../../../resources/vendor/jquery/jquery.min.js"></script>--%>
-<script src="../../../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../../resources/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="../../../resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../../../resources/bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="../../../resources/js/sb-admin-2.min.js"></script>
+<script src="../../../resources/bootstrap/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="../../../resources/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="../../../resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="../../../resources/bootstrap/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="../../../resources/bootstrap/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="../../../resources/js/demo/datatables-demo.js"></script>
+<script src="../../../resources/bootstrap/js/demo/datatables-demo.js"></script>
 
 
 <%-- 모바일 버전에서 reload시, 메뉴 펼쳐지는 문제 해결하기 위해 코드 추가 --%>
@@ -70,9 +70,9 @@
         }); //DataTable
 
         $(".sidebar-nav")
-        .attr("class","sidebar-nav navbar-collapse collapse")
-        .attr("aria-expanded", 'false')
-        .attr("style", "height:1px");
+            .attr("class","sidebar-nav navbar-collapse collapse")
+            .attr("aria-expanded", 'false')
+            .attr("style", "height:1px");
     }); //.jq
 </script>
 

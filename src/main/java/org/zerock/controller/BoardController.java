@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
 import org.zerock.service.BoardService;
 
-@RequestMapping("/board/*")
+@RequestMapping("/board/")
 
 @Controller
 @Log4j
@@ -29,6 +29,14 @@ public class BoardController {
 
         model.addAttribute("list", service.getList());
     } //list
+
+
+    // 게시물 등록 화면
+    @GetMapping("/register")
+    public void register(){
+        log.debug("register() invoked.");
+
+    } //register
 
 
     // 새 게시물 등록하기
@@ -82,6 +90,8 @@ public class BoardController {
 
         return "redirect:/board/list";
     } //remove
+
+
 
 
 } //BoardController
