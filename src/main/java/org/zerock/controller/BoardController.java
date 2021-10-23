@@ -58,9 +58,9 @@ public class BoardController {
 
 
     // 특정 게시물 조회하기
-    @GetMapping("/get")
+    @GetMapping({"/get","/modify"})
     public void get(@RequestParam("bno") Long bno, Model model){
-        log.debug("get(bno, model) invoked.");
+        log.debug("get(bno, model) invoked. /get or modify.");
 
         model.addAttribute("board", service.get(bno));
     } //get

@@ -41,7 +41,8 @@
                             <c:forEach items="${list}" var="board">
                                 <tr>
                                     <td><c:out value="${board.bno}" /></td>
-                                    <td><c:out value="${board.title}" /></td>
+                                    <td><a href='/board/get?bno=<c:out value="${board.bno}" />'>
+                                        <c:out value="${board.title}"/> </a></td>
                                     <td><c:out value="${board.writer}" /></td>
                                     <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}"/></td>
                                     <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}"/></td>
@@ -80,6 +81,7 @@
         </div>
         <!-- /.row -->
 
+
 <script type="text/javascript">
     $(function(){
         console.log("list jq started...");
@@ -90,14 +92,18 @@
 
         checkModal(result);
 
+        //replaceState(data: any, title: string, url?: string | null): void;
+        history.replaceState({},null,null); //result값 history state에 저장
 
+
+        //---------------checkModal
         function checkModal(result){
             console.log("checkModal({}) invoked.", result);
 
-            if (result === ''){
-                console.log("no result");
+            if (result === '' || history.state ){
                 return;
-            } //if : controller로부터 result값이 넘어오지 않았으면.. (성공x)
+
+            } //if : controller로부터 result값이 넘어오지 않았으면 (성공x) || 이미 처리되어 history.state에 쌓여있으면
 
             if(parseInt(result) > 0) {
                 $(".modal-body").html("게시글 " + parseInt(result) + " 번이 등록되었습니다.");
@@ -108,6 +114,8 @@
             $("#myModal").modal("show");
         } //checkModal
 
+
+        //---------------event
         $("#regBtn").on("click", function(){
             self.location ="/board/register";
 
