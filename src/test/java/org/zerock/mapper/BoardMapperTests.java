@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
+
+import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -91,4 +94,19 @@ public class BoardMapperTests {
         int count = mapper.update(board);
         log.info("UPDATE COUNT : " + count);
     } //testUpdate
+
+    @Test
+    public void testPaging(){
+        log.debug("test Paging() invoked.");
+
+        Criteria cri = new Criteria();
+
+        // 10개씩 3페이지
+        cri.setPageNum(3);
+        cri.setAmount(10);
+        
+        List<BoardVO> list = mapper.getListWithPaging(cri);
+
+        list.forEach(board -> log.info(board));
+    } //testPaging
 } // end class

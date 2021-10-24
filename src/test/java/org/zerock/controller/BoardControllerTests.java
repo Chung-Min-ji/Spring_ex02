@@ -51,6 +51,17 @@ public class BoardControllerTests {
     } //testList
 
     @Test
+    public void testListPaging() throws Exception{
+        log.debug("testListPaing() invoked.");
+
+        log.info(mockMvc.perform(
+                MockMvcRequestBuilders.get("/board/list")
+                        .param("pageNum", "2")
+                        .param("amount", "10"))
+                .andReturn().getModelAndView().getModel());
+    } //testListPaging
+
+    @Test
     public void testRegister() throws Exception{
         log.debug("testRegister() invoked.");
 

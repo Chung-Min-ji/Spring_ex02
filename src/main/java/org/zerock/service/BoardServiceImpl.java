@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 import org.zerock.mapper.BoardMapper;
 
 import java.util.List;
@@ -65,11 +66,20 @@ public class BoardServiceImpl implements BoardService{
 
 
     // 전체 게시물 목록 조회
-    @Override
-    public List<BoardVO> getList() {
-        log.debug("getList() invoked");
+//    @Override
+//    public List<BoardVO> getList() {
+//        log.debug("getList() invoked");
+//
+//        return mapper.getList();
+//    } //getList
 
-        return mapper.getList();
+
+    // 전체 게시물 조회 with 페이징
+    @Override
+    public List<BoardVO> getList(Criteria cri){
+        log.debug("getList(cri) invoked. cri : " + cri);
+
+        return mapper.getListWithPaging(cri);
     } //getList
 
 } //BoardServiceImpl
