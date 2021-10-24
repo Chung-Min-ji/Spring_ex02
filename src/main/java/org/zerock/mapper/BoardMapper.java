@@ -15,5 +15,6 @@ public interface BoardMapper {
     public BoardVO read(Long bno);
     public int delete(Long bno);
     public int update(BoardVO board);
+    public int getTotalCount(Criteria cri); // DB상의 모든 게시물 수
 
 } //end interface

@@ -13,6 +13,7 @@ public interface BoardService {
     public boolean remove(Long bno);             // 게시물 삭제
 //    public List<BoardVO> getList();            // 전체 게시물 목록 조회
     public List<BoardVO> getList(Criteria cri);     // 게시물 목록 조회 (페이징)
+    public int getTotal(Criteria cri);          // 전체 데이터 개수 전달
 
 } //end interface
 

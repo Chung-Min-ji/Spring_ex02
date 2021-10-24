@@ -1,5 +1,8 @@
 <?mappers version="1.0" encoding="UTF-8"?>
-<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<!--<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">-->
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+
 <log4j:configuration>
 
     <!-- Appenders -->
@@ -13,7 +16,32 @@
 
     <!-- Application Loggers -->
     <logger name="Controller">
-        <level value="debug" />
+        <level value="info" />
+    </logger>
+
+    <!-- log4jdbc.log4j2 -->
+    <logger name="jdbc.sqlonly">
+        <level value="warn" />
+    </logger>
+
+    <logger name="jdbc.sqltiming">
+        <level value="info" />
+    </logger>
+
+    <logger name="jdbc.audit">
+        <level value="warn" />
+    </logger>
+
+    <logger name="jdbc.resultset">
+        <level value="warn" />
+    </logger>
+
+    <logger name="jdbc.resultsettable">
+        <level value="warn" />
+    </logger>
+
+    <logger name="jdbc.connection">
+        <level value="warn" />
     </logger>
 
     <!-- 3rdparty Loggers -->
@@ -30,13 +58,23 @@
     </logger>
 
     <logger name="org.springframework.web">
-        <level value="debug" />
+        <level value="info" />
+    </logger>
+
+
+    <!-- Hikari log -->
+    <logger name="com.zaxxer.hikari">
+        <level value="info" />
+    </logger>
+
+    <logger name="com.zaxxer.hikari.HikariConfig">
+        <level value="info"/>
     </logger>
 
     <!-- Root Logger -->
     <!-- root = default -->
     <root>
-        <priority value="info" />
+        <priority value="debug" />
         <!-- priority : log level. 레벨 너무 낮으면 log에 찍히지 않음.
              fatal > error > warn > info > debug > trace (verbose)
              fatal~error는 빨갛게 찍힘 -->

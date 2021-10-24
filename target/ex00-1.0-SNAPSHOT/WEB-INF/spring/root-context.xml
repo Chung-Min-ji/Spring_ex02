@@ -41,7 +41,11 @@
     </bean>
 
 
+    <!-- myBatis component-scan -->
+    <mybatis-spring:scan base-package="org.zerock.mapper" />
+
     <!-- component-scan -->
-    <context:component-scan base-package="org.zerock" />
+    <context:component-scan base-package="org.zerock.controller" />
+    <context:component-scan base-package="org.zerock.service" />
 
 </beans>

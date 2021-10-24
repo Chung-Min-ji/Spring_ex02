@@ -19,4 +19,6 @@
     </bean>
 
     <context:component-scan base-package="org.zerock.controller"/>
+
+    <mvc:resources mapping="/resources/**" location="resources/"/>
 </beans>
