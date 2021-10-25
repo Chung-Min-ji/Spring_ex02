@@ -84,17 +84,24 @@ public class BoardController {
     // 게시물 수정
     @PostMapping("/modify")
     public String modify(BoardVO board, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttrs){
-        log.debug("modify(board, rttrs) invoked.");
+        log.debug("modify(board, rttrs) invoked. board : " + board);
 
         if (service.modify(board)){
-
             rttrs.addFlashAttribute("result", "success");
+
         } //if : 성공적으로 modify가 이루어졌으면...
 
-        rttrs.addAttribute("pageNum", cri.getPageNum());
-        rttrs.addAttribute("amount", cri.getAmount());
+        //-- 1. without getListLink()
+//        rttrs.addAttribute("pageNum", cri.getPageNum());
+//        rttrs.addAttribute("amount", cri.getAmount());
+//        rttrs.addAttribute("type", cri.getType());
+//        rttrs.addAttribute("keyword", cri.getKeyword());
+//
+//        return "redirect:/board/list";
 
-        return "redirect:/board/list";
+        //-- 2. with getListLink()
+        return "redirect:/board/list" + cri.getListLink();
+
     } //modify
 
 
@@ -109,10 +116,16 @@ public class BoardController {
             rttrs.addFlashAttribute("result", "success");
         } //if : 성공적으로 remove가 이루어졌으면..
 
-        rttrs.addAttribute("pageNum", cri.getPageNum());
-        rttrs.addAttribute("amount", cri.getAmount());
+//        //-- 1. without getListLink()
+//        rttrs.addAttribute("pageNum", cri.getPageNum());
+//        rttrs.addAttribute("amount", cri.getAmount());
+//        rttrs.addAttribute("type", cri.getType());
+//        rttrs.addAttribute("keyword", cri.getKeyword());
+//
+//        return "redirect:/board/list";
 
-        return "redirect:/board/list";
+        //-- 2. with getListLink()
+        return "redirect:/board/list" + cri.getListLink();
     } //remove
 
 

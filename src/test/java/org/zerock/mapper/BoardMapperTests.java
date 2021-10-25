@@ -109,4 +109,17 @@ public class BoardMapperTests {
 
         list.forEach(board -> log.info(board));
     } //testPaging
+
+    @Test
+    public void testSearch(){
+        log.debug("testSearch() invoked.");
+
+        Criteria cri = new Criteria();
+        cri.setKeyword("dd");
+        cri.setType("TC");
+
+        List<BoardVO> list = mapper.getListWithPaging(cri);
+
+        list.forEach(board -> log.info(board));
+    } //testSearch
 } // end class
